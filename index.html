@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App - Weather Details</title>
+    <link rel="stylesheet" type="text/css" href="wstylesheet.css">
+	<style>
+		body,
+		html {
+			background: linear-gradient(to right, yellow, #8ecdff);
+		}
+	</style>
+</head>
+<body>
+	<div class = "navbar">
+		 <nav>
+			<ul>
+			  <li><a href = "login.html">Login</a></li>
+			  <li><a href= "index.html">Weather Details</a></li>
+			  <li><a href= "#forecast-container">Weather Forecast</a></li>
+			  
+			</ul>
+		  </nav>
+	</div>	  
+
+	<div class="search-container" id= "search">
+		<label for="latitudeInput">Latitude:  </label>
+		<input type="text" id="latitudeInput" placeholder="Enter latitude" />
+		<br/>
+		<label for="longitudeInput">Longitude: </label>
+		<input type="text" id="longitudeInput" placeholder="Enter longitude" />
+		<br/>
+		<button id="searchButton">Search</button>
+	</div>
+	<div id="weatherDetails" ></div>  
+    
+
+    <script src="weather.js"></script>
+</body>
+</html>
