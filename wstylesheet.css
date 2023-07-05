@@ -1,0 +1,189 @@
+body,
+html {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background-position: top;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-color: #f2f2f2;
+  color: black;
+  
+}
+
+
+button {
+  margin-top: 12px;
+}
+
+
+h1 {
+  font-weight: bold;
+  padding-bottom: 20px;
+  
+}
+
+input {
+  width: 70%;
+  padding: 12px 12px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  outline: none;
+}
+
+input:focus {
+  background-color: lightblue;
+}
+
+button {
+  background-color:black ;
+  color: #f2f2f2;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  cursor: pointer;
+  border: 3px solid #48494a;
+  border-radius: 20px;
+}
+
+button:hover {
+  background-color: white;
+  color: black;
+}
+
+#loginbutton{
+	background-color:#884dff;
+}
+
+.search-container {
+	margin: 20px;
+	background-color: black;
+	color: white;
+	width: 800px;
+	text-align: left;
+	padding: 20px;
+	padding-top:50px;
+	padding-left: 40px;
+	border-radius: 10px; 
+}
+
+
+#latitudeInput{
+	margin-left:12px;
+}
+
+#searchButton{
+	margin-left:650px;
+	background-color:#686868;
+}
+
+.container {
+  width: 70%;
+  height: 60%;
+  max-width: 500px;
+  border-radius: 10px;
+  background-color: #8A2BE2;
+  color: white;
+  padding: 20px;
+}
+
+.form-container {
+  
+  padding-left: 40px;
+  
+}
+
+.col-name {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-input {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.navbar{
+	
+}
+
+
+nav {
+  background-color: #333;
+  color: #fff;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  display: block;
+  padding: 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  background-color: #555;
+}
+
+.weather-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.weather-info > * {
+  margin-right: 40px;
+}
+
+.temperature{
+	font-size: 30px;
+}
+
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.forecast-box {
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 5px;
+  max-width: 600px;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
+
+.forecast-info{
+	padding:10px;
+	flex-wrap: wrap;
+	justify-content: center;
+}
