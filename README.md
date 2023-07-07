@@ -1,5 +1,4 @@
 # mickey-arthur-weather-app
-# Weather App
 
 The Weather App is a web application that displays weather information for a given location.
 
