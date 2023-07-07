@@ -7,7 +7,7 @@ The Weather App is a web application that displays weather information for a giv
 - Fetches current weather details from the OpenWeatherMap API.
 - Displays temperature, weather conditions, and humidity.
 - Shows a weather icon corresponding to the current conditions.
-- Allows viewing the forecast for 3 days or 7 days.
+- Allows viewing the forecast for 3 days or 5 days.
 
 ## Technologies Used
 
