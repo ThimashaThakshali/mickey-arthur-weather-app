@@ -2,47 +2,90 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+	
     <title>Weather App - User Login</title>
+	
     <link rel="stylesheet" type="text/css" href="wstylesheet.css">
+	
     <style>
         body,
         html {
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(to right, #9c27b0, #8ecdff);
+			background: linear-gradient(to right, rgb(255, 70, 0), rgb(255, 113, 0),rgb(255, 255, 69));      
         }
 
         h1 {
             color: white;
         }
+		
+		#login-container {
+			width: 70%;
+			height: 60%;
+			max-width: 500px;
+			border-radius: 10px; 
+			padding: 20px;
+			color: white;
+			background-color: black;
+		}
+		
+		#loginbutton{
+			margin-top:50px;
+		}
+		
     </style>
+	
 </head>
+
 <body>
 
-<div class="container">
+<div id = "login-container">
+
     <h1>User Login</h1>
+	
     <div class="form-container">
-        <form id="loginForm">
-            <div class="row">
+        
+		<form id="loginForm">
+            
+			<div class="row">
+			
                 <div class="col-name">
+				
                     <label for="username">Username:</label>
+					
                 </div>
+				
                 <div class="col-input">
+				
                     <input type="text" id="username" required>
+					
                 </div>
+				
             </div>
+			
             <div class="row">
+			
                 <div class="col-name">
+				
                     <label for="password">Password:</label>
+					
                 </div>
+				
                 <div class="col-input">
+				
                     <input type="password" id="password" required>
+					
                 </div>
+				
             </div>
+			
             <button id="loginbutton" type="submit">Login</button>
+			
         </form>
+		
     </div>
+	
 </div>
 
 <script src = login.js> </script>

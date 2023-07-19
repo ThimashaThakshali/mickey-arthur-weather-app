@@ -1,6 +1,8 @@
 // Get the weather details and display them on the Weather Details page
 document.addEventListener('DOMContentLoaded', () => {
   getWeatherDetails('Colombo', 'LK'); // Display weather details for Colombo by default
+  
+
 });
 
 // Map weather descriptions to corresponding icons
@@ -22,6 +24,10 @@ const weatherIcons = {
   Tornado: 'tornado.png',
 };
 
+
+ 
+ 
+ 
 // Add a variable to track the forecast visibility
 let forecastVisible = false;
 
@@ -34,11 +40,15 @@ async function getWeatherDetails(city, countryCode) {
     const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${countryCode}&appid=${apiKey}`);
     const weatherData = await weatherResponse.json();
 
+
     // Extract the relevant weather details
+    city = city.charAt(0).toUpperCase() + city.slice(1);
     const date = new Date(weatherData.dt * 1000).toDateString(); // Convert timestamp to date string
     const temperatureCelsius = Math.round(weatherData.main.temp - 273.15);
+	
     const time = new Date(weatherData.dt * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-    const main = weatherData.weather[0].main;
+
+	const main = weatherData.weather[0].main;
     const description = weatherData.weather[0].description;
     const humidity = weatherData.main.humidity;
 
@@ -58,8 +68,8 @@ async function getWeatherDetails(city, countryCode) {
           <h1>${temperatureCelsius}°C</h1>
         </div>
         <div class="city">
-          <h1>${city}, ${countryCode}</h1>
-          <p> ${date}</p>
+          <h1>${city}, ${countryCode.toUpperCase()}</h1>
+          <p> ${date},${time}</p>
         </div>
         <div class="weather-icon">
           <img src="${icon}" alt="${description}" style="width: 100px; height: 100px;">
@@ -70,15 +80,18 @@ async function getWeatherDetails(city, countryCode) {
         </div>
         <button id="viewForecastButton">Show Forecast</button>
       </div>
+	  <hr>
+	  <div class = "forecast-title"></div>
       <div class="forecast-container" id="forecast-container"></div>
     `;
 
     // Display the weather details on the page
     weatherDetailsElement.innerHTML = weatherHTML;
-
+	
     // Event listener for the "Show Forecast" button
 	document.getElementById('viewForecastButton').addEventListener('click', () => {
 	  toggleForecast();
+	  
 	  if (!forecastVisible) {
 		getWeatherForecastFor3Days(city, countryCode); // Fetch and display forecast for 3 days initially
 	  }
@@ -90,9 +103,29 @@ async function getWeatherDetails(city, countryCode) {
     weatherDetailsElement.innerHTML = '<p>Failed to fetch weather details.</p>';
   }
 }
+  
+// Event listener for the "Search by City Name" button
+document.getElementById('searchCityBtn').addEventListener('click', () => {
+  const searchContainer = document.getElementById('search-container');
+  const searchContainer2 = document.getElementById('search-container2');
+
+  searchContainer.style.display = 'none';
+  searchContainer2.style.display = 'block';
+});
+
+// Event listener for the "Search by Lat and Long" button
+document.getElementById('searchByLatLongBtn').addEventListener('click', () => {
+  const searchContainer = document.getElementById('search-container');
+  const searchContainer2 = document.getElementById('search-container2');
+
+  searchContainer2.style.display = 'none';
+  searchContainer.style.display = 'block';
+});
+
+
 
 // Event listener for the "Search" button
-document.getElementById('searchButton').addEventListener('click', () => {
+document.getElementById('searchButton1').addEventListener('click', () => {
   const latitudeInput = document.getElementById('latitudeInput');
   const longitudeInput = document.getElementById('longitudeInput');
   const latitude = latitudeInput.value.trim();
@@ -103,7 +136,25 @@ document.getElementById('searchButton').addEventListener('click', () => {
   } else {
     console.log('Latitude and longitude values are required.');
   }
+  
+}); 
+
+// Event listener for the "Search" button in the second search container
+document.getElementById('searchButton2').addEventListener('click', () => {
+  const cityInput = document.getElementById('cityInput');
+  const countryCodeInput = document.getElementById('countryCodeInput');
+  const city = cityInput.value.trim();
+  const countryCode = countryCodeInput.value.trim();
+
+  if (city !== '' && countryCode !== '') {
+    getWeatherDetails(city, countryCode);
+  } else {
+    console.log('City and country code are required.');
+  }
 });
+  
+
+
 
 async function reverseGeocode(latitude, longitude) {
   try {
@@ -128,11 +179,18 @@ async function getWeatherForecastFor3Days(city, countryCode) {
 }
 
 async function getWeatherForecastForWeek(city, countryCode) {
-  getWeatherForecast(city, countryCode, 7);
+  getWeatherForecast(city, countryCode, 5);
 }
 
 async function getWeatherForecast(city, countryCode, days) {
   const forecastContainer = document.querySelector('.forecast-container');
+  
+  const forecastTitleContainer = document.querySelector('.forecast-title');
+  
+  const forecastTitleHTML = `<h2>Weather Forecast For the next ${days} days</h2>`;
+  
+  forecastTitleContainer.innerHTML = forecastTitleHTML;
+ 
 
   try { 
     // Make the API request to OpenWeatherMap for the forecast
@@ -197,8 +255,7 @@ async function getWeatherForecast(city, countryCode, days) {
 
 		// Event listener for the "Close" button
 		closeButton.addEventListener('click', () => {
-		  forecastContainer.innerHTML = ''; // Clear the forecast container
-		  toggleForecast(); // Hide the forecast container
+		  forecastContainer.innerHTML = ''; // Clear the forecast container	  
 		  getWeatherForecastFor3Days(city, countryCode); // Fetch and display forecast for 3 days
 		});
     }
@@ -212,18 +269,19 @@ async function getWeatherForecast(city, countryCode, days) {
 
 function toggleForecast() {
   const forecastContainer = document.querySelector('.forecast-container');
+  const forecastTitleContainer = document.querySelector('.forecast-title');
   const viewForecastButton = document.getElementById('viewForecastButton');
 
   if (forecastContainer.style.display === 'none') {
     forecastContainer.style.display = 'block';
+	forecastTitleContainer.style.display = 'block';
     viewForecastButton.textContent = 'Hide Forecast';
+	
+	
   } else {
     forecastContainer.style.display = 'none';
     viewForecastButton.textContent = 'Show Forecast';
+	forecastTitleContainer.style.display = 'none';
   }
 }
 
-// Initial setup
-document.addEventListener('DOMContentLoaded', () => {
-  getWeatherDetails('Colombo', 'LK'); // Display weather details for Colombo by default
-});

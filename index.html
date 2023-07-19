@@ -5,10 +5,35 @@
     <title>Weather App - Weather Details</title>
     <link rel="stylesheet" type="text/css" href="wstylesheet.css">
 	<style>
-		body,
-		html {
-			background: linear-gradient(to right, yellow, #8ecdff);
+		#search-container{
+			margin: 20px;	
+			width: 800px;
+			text-align: left;
+			padding: 20px;
+			padding-top:50px;
+			padding-left: 40px;
+			border-radius: 10px; 
 		}
+		#search-container2{
+			display: none;
+		}
+
+
+		#latitudeInput{
+			margin-left:12px;
+		}
+
+		#searchButton{
+			margin-left:650px;
+			
+		}
+		
+		#cityInput{
+			margin-left:60px;
+		}
+
+
+		
 	</style>
 </head>
 <body>
@@ -21,17 +46,35 @@
 			  
 			</ul>
 		  </nav>
-	</div>	  
+	</div>	
 
-	<div class="search-container" id= "search">
+    <br>
+	<button id="searchCityBtn">Search by City Name</button>
+	<button id="searchByLatLongBtn">Search by Coordinates</button>	
+
+	<div class="container" id= "search-container">
 		<label for="latitudeInput">Latitude:  </label>
 		<input type="text" id="latitudeInput" placeholder="Enter latitude" />
 		<br/>
 		<label for="longitudeInput">Longitude: </label>
 		<input type="text" id="longitudeInput" placeholder="Enter longitude" />
 		<br/>
-		<button id="searchButton">Search</button>
+		<button class = "searchButton" id="searchButton1">Search</button>
 	</div>
+	
+	<div class="container" id= "search-container2" >
+	<label for="cityInput">City:  </label>
+		<input type="text" id="cityInput" placeholder="Enter City" />
+		<br/>
+		
+		<label for="countryCodeInput">Country Code: </label>
+		<input type="text" id="countryCodeInput" placeholder="Enter Country Code" />
+		<br/>
+		<button class = "searchButton" id="searchButton2">Search</button>
+	</div>	
+		
+	<hr>
+	
 	<div id="weatherDetails" ></div>  
     
 

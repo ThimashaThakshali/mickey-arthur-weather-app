@@ -7,8 +7,8 @@ html {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
-  background-color: #f2f2f2;
   color: black;
+  background: linear-gradient(to right, yellow, #8ecdff);
   
 }
 
@@ -19,7 +19,7 @@ button {
 
 
 h1 {
-  font-weight: bold;
+ 
   padding-bottom: 20px;
   
 }
@@ -38,7 +38,7 @@ input:focus {
 }
 
 button {
-  background-color:black ;
+  background-color:#686868;
   color: #f2f2f2;
   padding: 10px 25px;
   text-align: center;
@@ -58,14 +58,11 @@ button:hover {
   color: black;
 }
 
-#loginbutton{
-	background-color:#884dff;
-}
-
-.search-container {
-	margin: 20px;
-	background-color: black;
+.container
+{
 	color: white;
+	background-color: black;
+	margin: 20px;	
 	width: 800px;
 	text-align: left;
 	padding: 20px;
@@ -75,29 +72,15 @@ button:hover {
 }
 
 
-#latitudeInput{
-	margin-left:12px;
-}
-
-#searchButton{
-	margin-left:650px;
-	background-color:#686868;
-}
-
-.container {
-  width: 70%;
-  height: 60%;
-  max-width: 500px;
-  border-radius: 10px;
-  background-color: #8A2BE2;
-  color: white;
-  padding: 20px;
-}
-
 .form-container {
   
-  padding-left: 40px;
+  padding-left: 50px;
   
+}
+
+.searchButton{
+	margin-left:650px;
+	
 }
 
 .col-name {
@@ -117,11 +100,6 @@ button:hover {
   display: table;
   clear: both;
 }
-
-.navbar{
-	
-}
-
 
 nav {
   background-color: #333;
@@ -166,6 +144,7 @@ nav ul li a:hover {
 .weather-forecast {
   margin-top: 20px;
   text-align: center;
+  justify-content : center;
   width: 100%;
 }
 
