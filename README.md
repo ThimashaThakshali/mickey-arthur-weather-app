@@ -29,8 +29,8 @@ simple-weather-app: (https://simple-weather-application-7e9d15fd72ee.herokuapp.c
 4. Open the `index.html` file in a web browser.
 
 ## Login credentials
-# Username - ugthimashath@gmail.com
-# Password - password123
+### Username - ugthimashath@gmail.com
+### Password - password123
 
 ## Usage
 
