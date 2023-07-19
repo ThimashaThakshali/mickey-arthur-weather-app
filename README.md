@@ -28,6 +28,10 @@ simple-weather-app: (https://simple-weather-application-7e9d15fd72ee.herokuapp.c
 
 4. Open the `index.html` file in a web browser.
 
+##Login credentials
+#Username - ugthimashath@gmail.com
+#Password - password123
+
 ## Usage
 
 1. Enter the latitude and longitude of the city in the search box to get the weather details for that location.
