@@ -1,7 +1,7 @@
 # simple-weather-app
 
 The Weather App is a web application that displays weather information for a given location.
-simple-weather-app: (https://thimashathakshali.github.io/simple-weather-app/)
+Link to simple-weather-app: https://thimashathakshali.github.io/simple-weather-app/
 
 ## Features
 
