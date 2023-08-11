@@ -21,7 +21,7 @@
         }
 
         // Check if the entered credentials match the predefined values
-        if (username === 'ugthimashath@gmail.com' && password === 'password123') {
+        if (username === 'username@gmail.com' && password === 'password123') {
             // Redirect to the desired page after successful login
             // Replace 'index.html' with your actual weather details page
             window.location.href = 'index.html';
