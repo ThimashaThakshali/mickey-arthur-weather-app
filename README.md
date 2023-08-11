@@ -31,7 +31,7 @@ https://thimashathakshali.github.io/simple-weather-app/
 4. Open the `index.html` file in a web browser.
 
 ## Login credentials
-### Username - ugthimashath@gmail.com
+### Username - username@gmail.com
 ### Password - password123
 
 ## Usage
